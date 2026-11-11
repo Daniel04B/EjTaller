@@ -1,0 +1,272 @@
+##DIAGRAMA 16 DECLARACION DE VARIABLES
+DIAGRAMA 29 BLOQUE FUNCION
+DIAGRAMA 19 PARAMETROS
+DIAGRAMA 20 LECTURA
+DIAGRAMA 21 ASIGNACION
+DIAGRAMA 25 FACTOR
+DIAGRAMA 28 LLAMADAFUNCION##
+
+Proyecto TEST;
+# DECLARACION DE VARIABLES
+entero a;
+entero b = 10;
+entero c,d = 20;
+entero contador = 0;
+entero i = 1;
+entero n = 0;
+entero m = 1;
+
+# ARREGLOS
+entero numeros[3]={1,2,3};
+entero valores[5];
+entero matriz[3][4];
+
+cadena txt = ¡a!;
+
+real x = 15.75;
+real y = 2.5e3;
+real promedio;
+
+real reales[10];
+real matrizReal[2][3]={{1,2,3},{1,2,3}};
+
+cadena nombre = ¡Daniel!;
+cadena saludo = ¡Hola!;
+cadena texto;
+cadena nombres[5];
+
+logico bandera = verdadero;
+
+vacia auxiliar;
+
+##
+PRUEBAS COMPLETAS
+OPERADORES
+FUNCIONES
+CICLOS
+DECISIONES
+##
+ 
+# FUNCIONES
+funcion entero sumar(entero n; entero m)
+inicio
+entero resultado;
+#entero calcular;
+
+resultado = calcular + numeros[1]; #salio mal, ya que la funcion calcular esta declarada abajo, y al correr el programa dice el identificador calcular no ha sido declarado. Deberia de pedir parametros.
+
+regresa resultado;
+fin
+
+funcion real calcular(real a; real b)
+inicio
+real r;
+r = (a * b) / 2;
+regresa r;
+fin
+
+funcion vacia proceso()
+inicio
+contador++;
+escribir(contador);
+fin
+
+funcion cadena obtener(cadena txt)
+inicio
+cadena copia;
+copia = txt;
+regresa copia;
+fin
+
+# FUNCIONES CON ARREGLOS
+funcion entero obtenerNumero(entero A[10])
+inicio
+entero resultado;
+resultado = A[0+n];
+regresa resultado;
+fin
+
+funcion real obtenerMatriz(real M[2][3])
+inicio
+real resultado;
+resultado = M[0][0];
+regresa resultado;
+fin
+
+funcion entero sumarArreglo(entero A[10]; entero B[5])
+inicio
+entero resultado;
+resultado = A[0] + B[0];
+regresa resultado;
+fin
+
+funcion real calcularArreglos(real A[10]; real B[2][3])
+inicio
+real resultado;
+resultado = A[0] + B[0][0];
+regresa resultado;
+fin
+
+#BLOQUE PRINCIPAL
+inicio
+# INCREMENTOS
+a++;
+b--;
+
+# INCREMENTOS DE ARREGLOS
+numeros[0]++;
+numeros[1]--;
+
+# ASIGNACIONES
+a += 5;
+b -= 2;
+contador *= 3;
+i /= 1;
+
+# ASIGNACIONES DE ARREGLOS
+numeros[0] = 10;
+numeros[1] = 20;
+numeros[2] += 5;
+numeros[2] -= 2;
+numeros[2] *= 3;
+numeros[2] /= 2;
+
+# ASIGNACIONES DE MATRIZ
+matriz[0][0] = 10;
+matriz[1][2] = 20;
+
+# EXPRESIONES
+a = (b+c)*d;
+x = (x+y)/2;
+promedio = calcular(numeros[2/2],y);
+
+# EXPRESIONES CON ARREGLOS
+a = numeros[2] + numeros[1];
+x = reales[1] + 2.5;
+promedio = matrizReal[0][0] + matrizReal[1][2];
+
+# LLAMADAS A FUNCIONES
+a = sumar(4,3);
+texto = obtener(nombre);
+proceso();
+
+# LLAMADAS A FUNCIONES CON ARREGLOS
+a = obtenerNumero(numeros);
+x = obtenerMatriz(matrizReal);
+a = sumarArreglo(numeros,valores);
+x = calcularArreglos(reales,matrizReal);
+
+# PASAR ELEMENTOS DE ARREGLOS COMO ARGUMENTOS
+a = sumar(numeros[0],valores[0]);
+
+# ESCRITURA
+escribir(a);
+escribir(nombre);
+escribir(saludo);
+escribir(texto);
+escribir(a + b);
+escribir(a - b);
+escribir(a * b);
+escribir(a / b);
+escribir(a % b);
+escribir(a ^ b);
+escribir(a \ b);
+
+# ESCRITURA DE ARREGLOS
+escribir(numeros[0]);
+escribir(numeros[1]);
+escribir(matriz[0][0]);
+escribir(matriz[1][2]);
+escribir(numeros[0] + numeros[1]);
+escribir(matriz[0][0] + matriz[1][2]);
+
+# OPERADORES LOGICOS
+escribir(verdadero And falso);
+escribir((a >= b) or (c >= d));
+escribir(Not bandera);
+
+# OPERADORES LOGICOS CON ARREGLOS
+escribir(numeros[0] > numeros[1]);
+escribir(matriz[0][0] >= matriz[1][2]);
+escribir((numeros[0] > 5) and (numeros[1] < 20));
+
+# OPERADORES RELACIONALES
+escribir(a == b);
+escribir(a <> b);
+escribir(a > b);
+escribir(a < b);
+escribir(a >= b);
+escribir(a <= b);
+
+# RELACIONALES CON ARREGLOS
+escribir(numeros[0] == numeros[1]);
+escribir(numeros[0] <> numeros[1]);
+escribir(matriz[0][0] > matriz[1][2]);
+escribir(matriz[0][0] < matriz[1][2]);
+escribir(matriz[0][0] >= matriz[1][2]);
+escribir(matriz[0][0] <= matriz[1][2]);
+
+# LECTURA
+leer(¡Ingrese valor!,a);
+leer(¡Ingrese datos!,a,b,c);
+
+# LECTURA DE ARREGLOS
+leer(¡Ingrese valor!,numeros[0]);
+leer(¡Ingrese datos!,numeros[1],valores[0]);
+leer(¡Ingrese matriz!,matriz[0][0]);
+
+# LECTURA MIXTA
+leer(¡Ingrese datos!,a,numeros[0],b,matriz[1][2],c);
+# WHILE
+mientras(a < b)
+{
+    a++;
+}
+mientras((a + b) < c)
+{
+    contador++;
+}
+
+# DO WHILE
+hacer
+{
+    b--;
+}
+mientras(a < b)
+hacer
+{
+    contador++;
+}
+mientras(contador < d)
+
+# FOR
+desde a = b hasta d
+{
+    escribir(a);
+}
+desde i = a hasta b
+{
+    escribir(i);
+}
+
+# DECISIONES
+si(a > b) entonces
+{
+    escribir(¡Mayor!);
+}
+sino
+{
+    escribir(¡Menor!);
+}
+
+# BOOLEANOS
+bandera = verdadero;
+bandera = falso;
+bandera = Not bandera;
+
+# ROMPER
+romper;
+
+# REGRESA
+regresa a;
+fin
